@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            var otherWindow;
+            function openOther() {
+                otherWindow = window.open("other.html", "otherWindow");
+
+            }
+
+            function otherFunc() {
+                otherWindow.postMessage("otherFunc", "*");
+            }
+        </script>
+    </head>
+    <body>
+        <div onclick="openOther()">Open the other window</div>
+        <div onclick="otherFunc()">Call the other window's function</div>
+    </body>
+</html>
