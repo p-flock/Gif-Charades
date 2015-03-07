@@ -1,13 +1,33 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script>
-            window.addEventListener("message", function(event) {
-                alert("The other window's function executed.");
-            }, false);
-        </script>
+    <script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.3.2.js"></script>
     </head>
     <body>
         <div>This is the other window.</div>
+
+        Enter your charade search: <input type="text" id="user_input" name="tag_search">
+        <input type="button" value="submit" onclick="getGifs()">
+
+        <script>
+        document.write(search);
+        function getGifs() {
+        var search = document.getElementById("user_input").value;
+            var xmlHttp = null;
+            xmlHttp = new XMLHttpRequest();
+            xmlHttp.open("GET", "http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=" + search, false);
+            xmlHttp.send(null);
+            var dict = xmlHttp.responseText;
+            var img_url = dict["image_original_url"];
+            console.log(img_url);
+          /*     -$.get(
+               -        "http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=" + search,
+               -        function(data) {
+               -        console.log('page content: ' + data);
+               -        }
+               -        ); 
+            */
+        }
+        </script>
     </body>
 </html>
