@@ -5,8 +5,8 @@
 <script>
 $(document).ready(function(){
     $("button").click(function(){
-        $.get("http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag="+search, function(data, status){
-            console.log("Data: " + data + "\nStatus: " + status);
+        $.get("http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag="+document.getElementById(search_tag), function(data, status){
+            console.log(data);
         });
     });
 });
@@ -14,8 +14,9 @@ $(document).ready(function(){
 </head>
 <body>
 
-<button>Send an HTTP GET request to a page and get the result back</button>
+Enter your charade search:
+<input type="text" id="search_tag" name="search">
+<button>Search</button>
 
 </body>
 </html>
-
