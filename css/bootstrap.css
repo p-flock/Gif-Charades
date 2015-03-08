@@ -264,6 +264,8 @@ th {
     border: 1px solid #ddd !important;
   }
 }
+@font-face { font-family: KeepCalm; src: url('../fonts/KeepCalm-Medium.ttf'); } 
+
 @font-face {
   font-family: 'Glyphicons Halflings';
 
@@ -1078,7 +1080,7 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
-  background-color: #fff;
+  background-color: #F16162;
 }
 input,
 button,
@@ -1161,7 +1163,12 @@ hr {
   overflow: visible;
   clip: auto;
 }
-h1,
+
+h1{
+  font-family: KeepCalm, sans-serif;
+  color:#F29072;
+}
+
 h2,
 h3,
 h4,
