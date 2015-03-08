@@ -4,6 +4,7 @@ var img;
 var answer = "CATS";
 var text_before = "IT'S RAINING";
 var text_after = "AND DOGS";
+var counter = 0;
 
 // This function is called when the user submits an answer
 // 
@@ -81,7 +82,7 @@ function getRandom() {
 
 
 function display_image(search_term){
-    var counter = 0;
+    counter = 0;
     console.log("search_term = " + search_term);
     if(counter == 0)
         ;
@@ -242,6 +243,7 @@ function display_puzzle () {
     for(i = 0; i < answer_index; i++) {
         text_before = text_before + words[i] + " ";
     }
+    
     $('#question-before').html(function() { return text_before});
     search_term = words[answer_index];
     display_image(search_term);
