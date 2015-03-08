@@ -864,3 +864,12 @@ div::after {
 body {
     webkit-tap-highlight-color: #fed136;
 }
+
+/* from here on is for score.html*/
+.message {
+    text-align: center;
+    margin: auto;
+    color: white;
+
+}
+
