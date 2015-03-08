@@ -25,33 +25,46 @@
 </head>
 
 <body>
-    <div class="message">
-        <h1>Congratulations!</h1>
-        <h1>You completed the challenge with a score of</h1>
-        <h2 id="score">placeholder</h2>
-        <br>
-        <h3>Tweet your score</h3>
-        <br>
-        <a class="twitter-share-button"
-            href="https://twitter.com/share"
-            data-size="large"
-            data-count="none"
-            data-url="pflock.me"
-            data-text="Try to beat my score on CrossGif! Play at: http://pflock.me/Gif-Charades/"
-            data-related="twitterdev:Twitter Developer Relations"
-            >
-            Tweet
-        </a>
+<div class="message">
+    <h1>Congratulations!</h1>
+    <h1>You completed the challenge with a score of</h1>
+    <h1 id="score">            </h1>
+    <br>
+    <a id="gif-place"> </a>
+    <h3>Tweet your score</h3>
+    <br>
+    <a class="twitter-share-button"
+        href="https://twitter.com/share"
+        data-size="large"
+        data-count="none"
+        data-url="pflock.me"
+        data-text="Try to beat my score on CrossGif! Play at: http://pflock.me/Gif-Charades/"
+        data-related="twitterdev:Twitter Developer Relations"
+        >
+        Tweet
+    </a>
 
-        <script>
-    window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
-        </script>
-        <br>
-        <h3>or</h3>
-        <a id="play-again-button" href="game.html" class="page-scroll btn btn-xl" color="black">Play again!</a>
-    </div>
+    <script>
+window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
+    </script>
+    <br>
+    <h3>or</h3>
+    <a id="play-again-button" href="game.html" class="page-scroll btn btn-xl" color="black">Play again!</a>
+</div>
 
     <footer>Powered by <a href="http://giphy.com/" style="color:#fff">Giphy</a></footer>
 </body>
+<script>
+var sPageURL = window.location.search.substring(1);
+var sURLVariables = sPageURL.split('&');
+console.log(sURLVariables);
+var score = sURLVariables[0].split('=')[1];
+console.log("score = " + score);
+var scorelm = document.getElementById("score");
+console.log(scorelm);
+document.getElementById("score").innerHTML= score;
+display_image(score);
+</script>
+
 </html>
 
