@@ -4,6 +4,7 @@ var img;
 var answer = "CATS";
 var text_before = "IT'S RAINING";
 var text_after = "AND DOGS";
+var counter = 0;
 
 // This function is called when the user submits an answer
 // 
@@ -81,7 +82,7 @@ function getRandom() {
 
 
 function display_image(search_term){
-    var counter = 0;
+    counter = 0;
     console.log("search_term = " + search_term);
     if(counter == 0)
         ;
@@ -161,14 +162,12 @@ function get_gcd (a, b) {
  */
 
 var sentences = {
-    "ROSES ARE RED": [0],
     "A BARREL OF MONKEYS":[3],
     "IT'S RAINING CATS AND DOGS":[2],
     "AS STUBBORN AS AN OX":[4],
     "TALLER THAN A TREE":[3],
     "IT TAKES TWO TO TANGO":[4],
     "HAVE YOUR CAKE AND EAT IT TOO":[2],
-    "ELVIS HAS LEFT THE BUILDING":[0],
     "IN THE HEAT OF THE MOMENT":[2],
     "KILL TWO BIRDS WITH ONE STONE":[2],
     "SPEAK OF THE DEVIL":[3],
@@ -245,7 +244,6 @@ function display_puzzle () {
     $('#question-before').html(function() { return text_before});
     search_term = words[answer_index];
     display_image(search_term);
-
     text_after = "";
     for(i = answer_index + 1; i < words.length; i++) {
         text_after = text_after + words[i] + " ";
