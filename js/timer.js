@@ -7,7 +7,7 @@ function timer() {
     if (seconds <= 0) {
         saveScore(val);
         console.log(getScore());
-        window.location.replace("./score.html");
+        window.location.replace("./score.html?s=" + val);
     }
 
     document.getElementById("timer").innerHTML = seconds;

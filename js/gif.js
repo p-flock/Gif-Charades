@@ -1,47 +1,52 @@
 var temp;
 var random;
 var img;
-var answer = "CATS";
+var answer;
 var text_before = "IT'S RAINING";
 var text_after = "AND DOGS";
-var val;
+var val = 0;
 
 // This function is called when the user submits an answer
 // 
 
-$(document).ready(function(){
-    $('#search_tag').keypress(function(e){
-      if(e.keyCode==13)
-      $("button").click()(function(){
+/*
+ *$(document).ready(function(){
+ *    $('#search_tag').keypress(function(e){
+ *      if(e.keyCode==13)
+ *      $("button").click()(function(){
+ *        var user_response = document.getElementById("search_tag").value;
+ *        user_response = user_response.toUpperCase();
+ *        if(user_response == answer){
+ *            console.log(answer);
+ *            
+ *            $('#score').html(++val);
+ *            console.log(val);
+ *            //$('#score').html(function(i, val) { 
+ *                //return val*1+1 });
+ *            cleartext();
+ *            clearimage();
+ *            $('#correct').show();
+ *            $( "#correct" ).fadeOut( 5000, function() {
+ *            });
+ *            display_puzzle();
+ *        }
+ *        else{
+ *            document.getElementById("search_tag").value = "";
+ *            clearimage();
+ *            $('#wrong').show();
+ *            $( "#wrong" ).fadeOut( 5000, function() {
+ *            });
+ *            display_image(search_term);
+ *        }
+ *      })
+ *    });
+ *});
+ */
+var checkAnswer = function() {
         var user_response = document.getElementById("search_tag").value;
         user_response = user_response.toUpperCase();
         if(user_response == answer){
-            $('#score').html(function(i, val) { 
-                return val*1+1 });
-            cleartext();
-            clearimage();
-            $('#correct').show();
-            $( "#correct" ).fadeOut( 5000, function() {
-            });
-            display_puzzle();
-        }
-        else{
-            document.getElementById("search_tag").value = "";
-            clearimage();
-            $('#wrong').show();
-            $( "#wrong" ).fadeOut( 5000, function() {
-            });
-            display_image(search_term);
-        }
-      })
-    });
-});
-$(document).ready(function() {
-    $("button").click(function() {
-        var user_response = document.getElementById("search_tag").value;
-        user_response = user_response.toUpperCase();
-        if(user_response == answer){
-            $('#score').html(function(i, val) { return val*1+1 });
+            $('#score').html(++val);
             cleartext();
             clearimage();
             $('#correct').show();
@@ -58,7 +63,14 @@ $(document).ready(function() {
             display_image(search_term);
         }
         
+    };
+$(document).ready(function() {
+    $("button").click(checkAnswer);
+    $('#search_tag').keypress(function(e){
+       if(e.keyCode==13)
+            checkAnswer();
     });
+
 });
 
 
@@ -82,12 +94,10 @@ function getRandom() {
 
 
 function display_image(search_term){
+    console.log(search_term);
     counter = 0;
     //console.log("search_term = " + search_term);
-    if(counter == 0)
-        ;
-    else
-        answer = search_term;
+    answer = search_term;
     var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=" + answer + "&api_key=dc6zaTOxFJmzC&limit=25");
         xhr.done(
             function(response) {
