@@ -19,7 +19,10 @@ details,
 figcaption,
 figure,
 footer,
-header,
+header{
+  font-family: KeepCalm, sans-serif;
+  color:;
+}
 hgroup,
 main,
 menu,
@@ -27,6 +30,9 @@ nav,
 section,
 summary {
   display: block;
+}
+span{
+  font-size: 50px;
 }
 audio,
 canvas,
@@ -1080,7 +1086,7 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
-  background-color: #F16162;
+  background-color: #62A8EF;
 }
 input,
 button,
@@ -1166,10 +1172,10 @@ hr {
 
 h1{
   font-family: KeepCalm, sans-serif;
-  color:#F29072;
+  color:#fff;
 }
 
-h2,
+h2
 h3,
 h4,
 h5,
