@@ -1,9 +1,9 @@
 var temp;
 var random;
 var img;
-var answer = "cats";
-var text_before = "It's raining";
-var text_after = "and dogs";
+var answer = "CATS";
+var text_before = "IT'S RAINING";
+var text_after = "AND DOGS";
 // This function is called when the user submits an answer
 // 
 
@@ -11,7 +11,7 @@ var text_after = "and dogs";
 $(document).ready(function() {
     $("button").click(function() {
         var user_response = document.getElementById("search_tag").value;
-        user_response = user_response.toLowerCase();
+        user_response = user_response.toUpperCase();
         if(user_response == answer){
             $('#score').html(function(i, val) { return val*1+1 });
             clearFields();
@@ -121,13 +121,13 @@ function get_gcd (a, b) {
  */
 
 var sentences = {
-    "roses are red": [0],
-    "A barrel of monkeys":[3],
-    "It's raining cats and dogs":[2],
-    "As stubborn as an ox":[4],
-    "Taller than a tree":[3],
-    "It takes two to tango":[4],
-    "Have your cake and eat it too":[2]
+    "ROSES ARE RED": [0],
+    "A BARREL OF MONKEYS":[3],
+    "IT'S RAINING CATS AND DOGS":[2],
+    "AS STUBBORN AS AN OX":[4],
+    "TALLER THAN A TREE":[3],
+    "IT TAKES TWO TO TANGO":[4],
+    "HAVE YOUR CAKE AND EAT IT TOO":[2]
 
 }
 
