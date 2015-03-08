@@ -1,20 +1,22 @@
 var temp;
 var random;
 var img;
-
+var answer = "cats";
+var text_before = "It's raining";
+var text_after = "are dogs";
 // This function is called when the user submits an answer
 // 
 $(document).ready(function() {
     $("button").click(function() {
-        var user = document.getElementById("search_tag").value;
-        user = user.toLowerCase();
-        if(user == "roses"){
+        var user_response = document.getElementById("search_tag").value;
+        user_response = user_response.toLowerCase();
+        if(user_response == answer){
             $('#score').html(function(i, val) { return val*1+1 });
             clearFields();
             $('#correct').show();
             $( "#correct" ).fadeOut( 5000, function() {
             });
-            newQuestion();
+            display_puzzle();
         }
         else{
             document.getElementById("search_tag").value = "";
@@ -33,41 +35,48 @@ function clearFields(){
 }
 
 
-function newQuestion(){
-    $('#question').html(function() { return "i'm testing" });
+function newQuestion(text){
+    $('#question').html(function() { return text });
 }
 
 
 function getRandom() {
-    return Math.floor((Math.random() * 25));
+    return Math.floor((Math.random() * 10));
 }
 
 
 function display_image(search_term){
-    var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=" + search_term + "&api_key=dc6zaTOxFJmzC");
+    console.log("search_term = " + search_term);
+    var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=" + search_term + "&api_key=dc6zaTOxFJmzC&limit=10");
         xhr.done(
             function(response) {
             temp = response;
+            console.log(temp);
             console.log("success got data", response);
-            random = getRandom();
             //var select_gif = response.data[random].images.original;
-            show_image(response.data[random].images.original.url, response.data[random].images.original.height, response.data[random].images.original.width, "Guess the word!");
+            show_image(response);
         });
 }
 
 
-function show_image(src, height, width, alt) {
-    console.log(height, width);
+function show_image(image_object) {
+    
+    //console.log(height, width);
+    random = getRandom();
+    var width = image_object.data[random].images.original.width;
+    var height = image_object.data[random].images.original.height;
+    var source = image_object.data[random].images.original.url;
     var resized = resize(height, width);
+
     height = resized[0];
     width = resized[1];
     console.log(height, width);
 
     img = document.createElement("img");
-    img.src = src;
+    img.src = source;
     img.width = width; //temp.data[random].images.original.width;
     img.height = height; //temp.data[random].images.original.height;
-    img.alt = alt;
+    img.alt = "Guess the word!";
     document.getElementById("gif-place").appendChild(img);
 }
 
@@ -111,10 +120,10 @@ function get_gcd (a, b) {
 
 var sentences = {
     "Roses are red": [0],
-    "The cat ate an apple":[1, 4],
-    "The dog ate the cat's food":[1, 4, 5]
-}
+    "A barrel of monkeys":[3],
+    "It's raining cats and dogs":[2]
 
+}
 /* selects a random sentence from the remaining possible sentences
  * and returns an array containing both the sentence as a string
  * and the indices of the words that should be converted to gifs
@@ -152,20 +161,49 @@ function display_puzzle () {
     // sentence will be an array containing a string and an array of integers
     var sentence = getRandomSentence(sentences);
     var words = sentence[0].split(" ");
+    console.log("sentence is" + words);
+    console.log(words[0]);
 
-    var answers = [];
-    for (index in sentence[1]) {
-        answers.append(words[index]);
-    }
+    
+    /*
+     *for (index in sentence[1]) {
+     *    answers.append(words[index]);
+     *}
+     */
 
-    var toDisplay = [];
-    for(word in words) {
-        if (word in answers)
-            toDisplay.append(convertToGif(word));
-        else
-            toDisplay.append(word);
-            
+    // redefines global variable 'answer'
+    answer = words[sentence[1][0]];
+    var answer_index = sentence[1][0];
+    console.log("answer = " + answer);
+
+
+
+    //var toDisplay = [];
+    text_before = "";
+    for(i = 0; i < answer_index; i++) {
+        text_before = text_before + words[i];
     }
+    document.getElementById("text-before").appendChild(text_before);
+        
+    display_image(words[answer_index]);
+
+    text_after = "";
+    for(i = answer_index + 1; i < words.length; i++) {
+        text_after = text_after + words[i];
+    }
+    document.getElementById("text-after").appendChild(text_after);
+
+    /*
+     *for(i = 0; i < words.length; i++) {
+     *    if (words[i] == answer) {
+     *        console.log("word = " + words[i]);
+     *        display_image(words[i]); 
+     *    }
+     *    else
+     *        newQuestion(words[i]);
+     *        
+     *}
+     */
 }
 
 
