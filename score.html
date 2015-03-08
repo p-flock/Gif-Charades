@@ -1,56 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/game.css" rel="stylesheet">
-    <link href="css/bootstrap.css" rel="stylesheet">
+<!-- Bootstrap Core CSS -->
+<link href="css/game.css" rel="stylesheet">
+<link href="css/bootstrap.css" rel="stylesheet">
 
-    <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+<!-- Custom Fonts -->
+<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="js/gif.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="js/gif.js"></script>
 </head>
 <body>
 <div class="message">
-<h1 id="score-message">
-Congratulations!
-</h1>
-<h1>
- You completed the challenge with a score of: 
- </h1>
-<h2 id="score">
-    score placeholder
-</h2>
-<br>
-<h3>Tweet your score</h3>
-<br>
-<a class="twitter-share-button"
-    href="https://twitter.com/share"
-    data-size="large"
-    data-url="pflock.me"
-    data-text="Try to beat my score on CrossGif! Play at: pflock.me"
-    data-related="twitterdev:Twitter Developer Relations"
-    >
-    Tweet
-</a>
-<script>
+        <h1>
+            Congratulations!
+    </h1>
+    <h1>
+        You completed the challenge with a score of 
+    </h1>
+    <h2 id="score">
+        placeholder
+    </h2>
+    <br>
+    <h3>Tweet your score</h3>
+    <br>
+    <a class="twitter-share-button"
+        href="https://twitter.com/share"
+        data-size="large"
+        data-count="none"
+        data-url="pflock.me"
+        data-text="Try to beat my score on CrossGif! Play at: pflock.me"
+        data-related="twitterdev:Twitter Developer Relations"
+        >
+        Tweet
+    </a>
+    <script>
 window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
-</script>
-<br>
-<h3>or</h3>
- <a id="play-again-button" href="game.html" class="page-scroll btn btn-xl" color="black">Play again!</a>
- </div>
+    </script>
+    <br>
+    <h3>or</h3>
+    <a id="play-again-button" href="game.html" class="page-scroll btn btn-xl" color="black">Play again!</a>
+</div>
 </body>
 </html>
 
