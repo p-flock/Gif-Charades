@@ -179,7 +179,11 @@ var sentences = {
     "DON'T JUDGE A BOOK BY IT'S COVER":[3],
     "EVERYTHING BUT THE KITCHEN SINK":[3],
     "EVERYBODY LOVES PUSHEEN":[2],
-    "GREAT MINDS THINK ALIKE":[1]
+    "GREAT MINDS THINK ALIKE":[1],
+    "BEAT AROUND THE BUSH":[3],
+    "CRY OVER SPILLED MILK": [3],
+    "STEAL SOMEONE'S THUNDER": [2],
+    "DON'T PUT ALL YOUR EGGS IN ONE BASKET": [4]
 }
 
 /* selects a random sentence from the remaining possible sentences

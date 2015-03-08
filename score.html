@@ -22,29 +22,19 @@
     <script src="js/gif.js"></script>
     <script src="js/timer.js"></script>
 </head>
-
 <body>
-	<header id="game">
-		<div class="container">
-            <div class="span4">
-            	<span class="intro-lead-in" id="question-before"></span>
-            	<div id="gif-place"></div>
-                <span class="intro-lead-in" id="question-after"></span>
-                <script>display_puzzle()</script>
-            </div>
-			<input type="text" id="search_tag" name="search" autofocus>
-			<br>
-			<button type="button" class="btn btn-lg btn-success">SUBMIT</button>
-			<br>
-            <div style="display:none" class="alert alert-success" id="correct" role="alert">
-			     Well done! You got the answer!
-			</div>
-			<div style="display:none" class="alert alert-danger" id="wrong" role="alert">
-                Oops, you're wrong. Try again.
-			</div>
-            <span id="left">Score:<br><span id="score">0</span></span>
-            <span id="right">Time:<br><span id="timer"></span></span>
-        </div>
-	</header>
+<a class="twitter-share-button"
+    href="https://twitter.com/share"
+    data-size="large"
+    data-url="pflock.me"
+    data-text="I just got a score of " + score + " on CrossGif! Try to beat me!"
+    data-related="twitterdev:Twitter Developer Relations"
+    >
+    Tweet
+</a>
+<script>
+window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
+</script>
 </body>
 </html>
+
