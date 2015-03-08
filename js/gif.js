@@ -119,7 +119,7 @@ function get_gcd (a, b) {
  */
 
 var sentences = {
-    "Roses are red": [0],
+    "roses are red": [0],
     "A barrel of monkeys":[3],
     "It's raining cats and dogs":[2]
 
@@ -181,9 +181,8 @@ function display_puzzle () {
     //var toDisplay = [];
     text_before = "";
     for(i = 0; i < answer_index; i++) {
-        text_before = text_before + words[i];
+        text_before = text_before + words[i] + " ";
     }
-    document.getElementById("text-before").appendChild(text_before);
         
     display_image(words[answer_index]);
 
@@ -191,7 +190,7 @@ function display_puzzle () {
     for(i = answer_index + 1; i < words.length; i++) {
         text_after = text_after + words[i];
     }
-    document.getElementById("text-after").appendChild(text_after);
+    //document.getElementById("text-after").appendChild(text_after);
 
     /*
      *for(i = 0; i < words.length; i++) {
