@@ -81,8 +81,13 @@ function getRandom() {
 
 
 function display_image(search_term){
+    var counter = 0;
     console.log("search_term = " + search_term);
-    var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=" + search_term + "&api_key=dc6zaTOxFJmzC&limit=25");
+    if(counter == 0)
+        ;
+    else
+        answer = search_term;
+    var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=" + answer + "&api_key=dc6zaTOxFJmzC&limit=25");
         xhr.done(
             function(response) {
             temp = response;
