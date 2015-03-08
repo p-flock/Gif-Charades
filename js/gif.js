@@ -162,14 +162,12 @@ function get_gcd (a, b) {
  */
 
 var sentences = {
-    "ROSES ARE RED": [0],
     "A BARREL OF MONKEYS":[3],
     "IT'S RAINING CATS AND DOGS":[2],
     "AS STUBBORN AS AN OX":[4],
     "TALLER THAN A TREE":[3],
     "IT TAKES TWO TO TANGO":[4],
     "HAVE YOUR CAKE AND EAT IT TOO":[2],
-    "ELVIS HAS LEFT THE BUILDING":[0],
     "IN THE HEAT OF THE MOMENT":[2],
     "KILL TWO BIRDS WITH ONE STONE":[2],
     "SPEAK OF THE DEVIL":[3],
@@ -243,7 +241,6 @@ function display_puzzle () {
     for(i = 0; i < answer_index; i++) {
         text_before = text_before + words[i] + " ";
     }
-
     $('#question-before').html(function() { return text_before});
     search_term = words[answer_index];
     display_image(search_term);
