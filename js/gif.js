@@ -3,9 +3,11 @@ var random;
 var img;
 var answer = "cats";
 var text_before = "It's raining";
-var text_after = "are dogs";
+var text_after = "and dogs";
 // This function is called when the user submits an answer
 // 
+
+
 $(document).ready(function() {
     $("button").click(function() {
         var user_response = document.getElementById("search_tag").value;
