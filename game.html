@@ -28,13 +28,13 @@
 		<div class="container">
             <div class="span4">
             	<span class="intro-lead-in" id="question-before"></span>
-            	<script>display_image()</script>
             	<div id="gif-place"></div>
-                <span class="intro-lead-in" id="question-after">AND DOGS.</span>
+                <span class="intro-lead-in" id="question-after"></span>
+                <script>display_puzzle()</script>
 			</div>
 			<input type="text" id="search_tag" name="search" autofocus>
-				<br>
-				<button>SUBMIT</button>
+			<br>
+			<button>SUBMIT</button>
 			<br>
             <div style="display:none" class="alert alert-success" id="correct" role="alert">
 			     Well done! You got the answer!
@@ -42,8 +42,8 @@
 			<div style="display:none" class="alert alert-danger" id="wrong" role="alert">
                 Oops, you're wrong. Try again.
 			</div>
-			<h4>Your score is:</h4> <h4 id="score">0</h4>
-            <span id="timer"></span>
+            <span id="left">Score:<br><span id="score">0</span></span>
+            <span id="right">Time:<br><span id="timer"></span></span>
         </div>
 	</header>
 </body>
