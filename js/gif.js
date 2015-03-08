@@ -97,10 +97,7 @@ function display_image(search_term){
     console.log(search_term);
     counter = 0;
     //console.log("search_term = " + search_term);
-    if(counter == 0)
-        ;
-    else
-        answer = search_term;
+    answer = search_term;
     var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=" + answer + "&api_key=dc6zaTOxFJmzC&limit=25");
         xhr.done(
             function(response) {
