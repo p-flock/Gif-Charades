@@ -162,14 +162,12 @@ function get_gcd (a, b) {
  */
 
 var sentences = {
-    "ROSES ARE RED": [0],
     "A BARREL OF MONKEYS":[3],
     "IT'S RAINING CATS AND DOGS":[2],
     "AS STUBBORN AS AN OX":[4],
     "TALLER THAN A TREE":[3],
     "IT TAKES TWO TO TANGO":[4],
     "HAVE YOUR CAKE AND EAT IT TOO":[2],
-    "ELVIS HAS LEFT THE BUILDING":[0],
     "IN THE HEAT OF THE MOMENT":[2],
     "KILL TWO BIRDS WITH ONE STONE":[2],
     "SPEAK OF THE DEVIL":[3],
@@ -181,7 +179,11 @@ var sentences = {
     "DON'T JUDGE A BOOK BY IT'S COVER":[3],
     "EVERYTHING BUT THE KITCHEN SINK":[3],
     "EVERYBODY LOVES PUSHEEN":[2],
-    "GREAT MINDS THINK ALIKE":[1]
+    "GREAT MINDS THINK ALIKE":[1],
+    "BEAT AROUND THE BUSH":[3],
+    "CRY OVER SPILLED MILK": [3],
+    "STEAL SOMEONE'S THUNDER": [2],
+    "DON'T PUT ALL YOUR EGGS IN ONE BASKET": [4]
 }
 
 /* selects a random sentence from the remaining possible sentences
@@ -243,11 +245,9 @@ function display_puzzle () {
     for(i = 0; i < answer_index; i++) {
         text_before = text_before + words[i] + " ";
     }
-    
     $('#question-before').html(function() { return text_before});
     search_term = words[answer_index];
     display_image(search_term);
-
     text_after = "";
     for(i = answer_index + 1; i < words.length; i++) {
         text_after = text_after + words[i] + " ";
