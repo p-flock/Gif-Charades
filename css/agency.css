@@ -280,7 +280,7 @@ header .intro-text {
 
 header .intro-text .intro-lead-in {
     margin-bottom: 25px;
-    font-family: "Elkwood";
+    font-family: "Roboto";
     font-size: 24px;
     line-height: 22px;
 }
@@ -302,7 +302,7 @@ header .intro-text .intro-heading {
 
     header .intro-text .intro-lead-in {
         margin-bottom: 25px;
-        font-family: "Elkwood";
+        font-family: "Raleway";
         font-size: 100px;
         line-height: 40px;
     }
@@ -716,15 +716,6 @@ section#contact .text-danger {
 footer {
     padding: 25px 0;
     text-align: center;
-}
-
-
-footer ul.quicklinks {
-    margin-bottom: 0;
-    text-transform: uppercase;
-    text-transform: none;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    line-height: 40px;
 }
 
 ul.social-buttons {
