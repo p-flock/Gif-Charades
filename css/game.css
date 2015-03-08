@@ -262,6 +262,8 @@ fieldset[disabled] .btn-xl.active {
 }
 
 header {
+    margin: auto;
+    margin-top: 1.5%;
     text-align: center;
     color: #fff;
     background-attachment: scroll;
@@ -653,6 +655,7 @@ section#contact {
     background-image: url(../img/map-image.png);
     background-position: center;
     background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 section#contact .section-heading {
@@ -850,12 +853,11 @@ body {
 
 #left {
     float: left;
-    margin-left: 30px;
-    margin-bottom: 300px;
+    margin: auto;
+    
 }
 
 #right {
     float: right;
-    margin-right: 30px;
-    margin-bottom: 300px;
+    margin: auto;
 }
