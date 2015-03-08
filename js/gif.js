@@ -182,13 +182,13 @@ function display_puzzle () {
     console.log("answer = " + answer);
 
 
-    $('#question-before').html(function() { return text_before});
 
     //var toDisplay = [];
     text_before = "";
     for(i = 0; i < answer_index; i++) {
         text_before = text_before + words[i] + " ";
     }
+    $('#question-before').html(function() { return text_before});
         
     display_image(words[answer_index]);
 
