@@ -4,7 +4,7 @@ $(document).ready(function() {
     $("button").click(function() {
         var xhr = $.get("http://api.giphy.com/v1/gifs/search?q="+document.getElementById("search_tag").value+"&api_key=dc6zaTOxFJmzC");
         xhr.done(
-            function(response) { 
+            function(response) {
             temp = response;
             console.log("success got data", response);
             random = getRandom();
@@ -38,7 +38,7 @@ function resize(height, width) {
         if ( ! b) {
                 return a;
             }
-    
+
         return gcd(b, a % b);
     };
     width = width / gcd;
