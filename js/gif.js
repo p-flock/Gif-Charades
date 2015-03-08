@@ -4,6 +4,7 @@ var img;
 var answer = "CATS";
 var text_before = "IT'S RAINING";
 var text_after = "AND DOGS";
+
 // This function is called when the user submits an answer
 // 
 
@@ -14,7 +15,8 @@ $(document).ready(function() {
         user_response = user_response.toUpperCase();
         if(user_response == answer){
             $('#score').html(function(i, val) { return val*1+1 });
-            clearFields();
+            cleartext();
+            clearimage();
             $('#correct').show();
             $( "#correct" ).fadeOut( 5000, function() {
             });
@@ -22,17 +24,22 @@ $(document).ready(function() {
         }
         else{
             document.getElementById("search_tag").value = "";
+            clearimage();
             $('#wrong').show();
             $( "#wrong" ).fadeOut( 5000, function() {
             });
+            display_image(search_term);
         }
         
     });
 });
 
 
-function clearFields(){
+function cleartext(){
     document.getElementById("search_tag").value = "";
+}
+
+function clearimage() {
     document.getElementById("gif-place").removeChild(img);
 }
 
@@ -191,8 +198,8 @@ function display_puzzle () {
         text_before = text_before + words[i] + " ";
     }
     $('#question-before').html(function() { return text_before});
-        
-    display_image(words[answer_index]);
+    search_term = words[answer_index];
+    display_image(search_term);
 
     text_after = "";
     for(i = answer_index + 1; i < words.length; i++) {
