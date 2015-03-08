@@ -207,7 +207,7 @@ function display_puzzle () {
     }
     $('#question-after').html(function() { return text_after});
 
-
+    delete sentences[sentence[0]];
 
     /*
      *for(i = 0; i < words.length; i++) {
