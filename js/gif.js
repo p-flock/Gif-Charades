@@ -50,13 +50,13 @@ function newQuestion(text){
 
 
 function getRandom() {
-    return Math.floor((Math.random() * 10));
+    return Math.floor((Math.random() * 25));
 }
 
 
 function display_image(search_term){
     console.log("search_term = " + search_term);
-    var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=" + search_term + "&api_key=dc6zaTOxFJmzC&limit=10");
+    var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=" + search_term + "&api_key=dc6zaTOxFJmzC&limit=25");
         xhr.done(
             function(response) {
             temp = response;
@@ -72,46 +72,48 @@ function show_image(image_object) {
     
     //console.log(height, width);
     random = getRandom();
-    var width = image_object.data[random].images.original.width;
-    var height = image_object.data[random].images.original.height;
+    //var width = image_object.data[random].images.original.width;
+    //var height = image_object.data[random].images.original.height;
     var source = image_object.data[random].images.original.url;
-    var resized = resize(height, width);
+    //var resized = resize(height, width);
 
-    height = resized[0];
-    width = resized[1];
-    console.log(height, width);
+    //height = resized[0];
+    //width = resized[1];
+    //console.log(height, width);
 
     img = document.createElement("img");
     img.src = source;
-    img.width = width; //temp.data[random].images.original.width;
-    img.height = height; //temp.data[random].images.original.height;
+    img.width = 400; //temp.data[random].images.original.width;
+    img.height = 400; //temp.data[random].images.original.height;
     img.alt = "Guess the word!";
     document.getElementById("gif-place").appendChild(img);
 }
 
-
-function resize(height, width) {
-
-    console.log(height, width);
-    
-    var MAX_HEIGHT = 400;
-    var MAX_WIDTH = 400;
-
-    var gcd = get_gcd(height, width);
-
-    console.log("gcd = " + gcd);
-    width = width / gcd;
-    height = height / gcd;
-
-    var width_mult = MAX_WIDTH / width;
-    var height_mult = MAX_HEIGHT / height;
-    var multiplier = Math.min(width_mult, height_mult);
-    console.log("multiplier = " + multiplier);
-    width = width * multiplier;
-    height = height * multiplier;
-    console.log(height, width);
-    return [height, width];
-}
+// resize is deprecated bc we chose to have all gifs be the same size for consistency's sake
+/*
+ *function resize(height, width) {
+ *
+ *    console.log(height, width);
+ *    
+ *    var MAX_HEIGHT = 400;
+ *    var MAX_WIDTH = 400;
+ *
+ *    var gcd = get_gcd(height, width);
+ *
+ *    console.log("gcd = " + gcd);
+ *    width = width / gcd;
+ *    height = height / gcd;
+ *
+ *    var width_mult = MAX_WIDTH / width;
+ *    var height_mult = MAX_HEIGHT / height;
+ *    var multiplier = Math.min(width_mult, height_mult);
+ *    console.log("multiplier = " + multiplier);
+ *    width = width * multiplier;
+ *    height = height * multiplier;
+ *    console.log(height, width);
+ *    return [height, width];
+ *}
+ */
 
 
 function get_gcd (a, b) {
