@@ -121,9 +121,14 @@ function get_gcd (a, b) {
 var sentences = {
     "roses are red": [0],
     "A barrel of monkeys":[3],
-    "It's raining cats and dogs":[2]
+    "It's raining cats and dogs":[2],
+    "As stubborn as an ox":[4],
+    "Taller than a tree":[3],
+    "It takes two to tango":[4],
+    "Have your cake and eat it too":[2]
 
 }
+
 /* selects a random sentence from the remaining possible sentences
  * and returns an array containing both the sentence as a string
  * and the indices of the words that should be converted to gifs
@@ -188,7 +193,7 @@ function display_puzzle () {
 
     text_after = "";
     for(i = answer_index + 1; i < words.length; i++) {
-        text_after = text_after + words[i];
+        text_after = text_after + words[i] + " ";
     }
     //document.getElementById("text-after").appendChild(text_after);
 
