@@ -8,6 +8,7 @@
     <meta name="author" content="">
 
     <!-- Bootstrap Core CSS -->
+    <link href="css/game.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
@@ -22,8 +23,32 @@
 </head>
 
 <body>
-    Enter your charade search:
-    <input type="text" id="search_tag" name="search">
-    <button>Search</button>
+	<header style="color:black">
+		<div class="container">
+            	<div class="span4">
+            		<script>
+            		display_image();
+            		</script>
+            		<div id="gif-place"></div>
+            		<br>
+            		<br>
+            		<input type="text" id="search_tag" name="search">
+				    <button>Submit</button> 
+				
+                <span class="intro-lead-in" id="question">
+				    are red.
+				</span>
+				</div>
+				<br>
+
+				<div style="display:none" class="alert alert-success" id="correct" role="alert">
+			        Well done! You got the answer!
+			    </div>
+				<div style="display:none" class="alert alert-danger" id="wrong" role="alert">
+			        Oops, you're wrong. Try again.
+			     </div>
+				<h4>Your score is:</h4> <h4 id="score">0</h4>
+		</div>
+	</header>
 </body>
 </html>
