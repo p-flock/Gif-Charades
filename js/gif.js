@@ -195,7 +195,7 @@ function display_puzzle () {
     for(i = answer_index + 1; i < words.length; i++) {
         text_after = text_after + words[i] + " ";
     }
-    //document.getElementById("text-after").appendChild(text_after);
+    $('#question').html(function() { return text_after});
 
     /*
      *for(i = 0; i < words.length; i++) {
