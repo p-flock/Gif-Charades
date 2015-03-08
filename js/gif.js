@@ -243,11 +243,10 @@ function display_puzzle () {
     for(i = 0; i < answer_index; i++) {
         text_before = text_before + words[i] + " ";
     }
-    
+
     $('#question-before').html(function() { return text_before});
     search_term = words[answer_index];
     display_image(search_term);
-
     text_after = "";
     for(i = answer_index + 1; i < words.length; i++) {
         text_after = text_after + words[i] + " ";
