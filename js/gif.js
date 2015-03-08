@@ -9,7 +9,7 @@ $(document).ready(function() {
             console.log("success got data", response);
             random = getRandom();
             //var select_gif = response.data[random].images.original;
-            show_image(response.data[random].images.url, response.data[random].images.height, response.data[random].images.width, "Guess the word!");
+            show_image(response.data[random].images.original.url, response.data[random].images.original.height, response.data[random].images.original.width, "Guess the word!");
         });
     });
 });
@@ -19,9 +19,11 @@ function getRandom() {
 }
 
 function show_image(src, height, width, alt) {
+    console.log(height, width);
     var resized = resize(height, width);
     height = resized[0];
     width = resized[1];
+    console.log(height, width);
 
     var img = document.createElement("img");
     img.src = src;
@@ -32,21 +34,32 @@ function show_image(src, height, width, alt) {
 }
 
 function resize(height, width) {
+
+    console.log(height, width);
+    
     var MAX_HEIGHT = 400;
     var MAX_WIDTH = 400;
-    var gcd = function(heigh, width) {
-        if ( ! b) {
-                return a;
-            }
 
-        return gcd(b, a % b);
-    };
+    var gcd = get_gcd(height, width);
+
+    console.log("gcd = " + gcd);
     width = width / gcd;
     height = height / gcd;
+
     var width_mult = MAX_WIDTH / width;
     var height_mult = MAX_HEIGHT / height;
     var multiplier = Math.min(width_mult, height_mult);
+    console.log("multiplier = " + multiplier);
     width = width * multiplier;
     height = height * multiplier;
+    console.log(height, width);
     return [height, width];
 }
+
+function get_gcd (a, b) {
+    if ( ! b) {
+        return a;
+    }
+    return get_gcd(b, a % b);
+};
+
