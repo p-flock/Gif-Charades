@@ -116,7 +116,9 @@ samp {
   font-size: 1em;
 }
 button,
-input,
+input{
+  color:#000;
+}
 optgroup,
 select,
 textarea {
