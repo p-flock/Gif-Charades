@@ -8,7 +8,33 @@ var text_after = "AND DOGS";
 // This function is called when the user submits an answer
 // 
 
-
+$(document).ready(function(){
+    $('#search_tag').keypress(function(e){
+      if(e.keyCode==13)
+      $("button").click()(function(){
+        var user_response = document.getElementById("search_tag").value;
+        user_response = user_response.toUpperCase();
+        if(user_response == answer){
+            $('#score').html(function(i, val) { 
+                return val*1+1 });
+            cleartext();
+            clearimage();
+            $('#correct').show();
+            $( "#correct" ).fadeOut( 5000, function() {
+            });
+            display_puzzle();
+        }
+        else{
+            document.getElementById("search_tag").value = "";
+            clearimage();
+            $('#wrong').show();
+            $( "#wrong" ).fadeOut( 5000, function() {
+            });
+            display_image(search_term);
+        }
+      })
+    });
+});
 $(document).ready(function() {
     $("button").click(function() {
         var user_response = document.getElementById("search_tag").value;
