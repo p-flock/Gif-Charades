@@ -1,4 +1,4 @@
-var seconds = 60;                           // Countdown time
+var seconds = 30;                           // Countdown time
 var countdown = setInterval(timer, 1000);   // Set timer function to run every second
 
 function timer() {
