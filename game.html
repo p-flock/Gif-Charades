@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,34 +26,25 @@
 <body>
 	<header>
 		<div class="container">
-            	<div class="span4">
-            		<span class="intro-lead-in" id="question-before">
-            		</span>
-            		<script>display_image()</script>
-            		<div id="gif-place"></div>
-            		<br>
-            		<br>
-            		<br>
-            		<input type="text" id="search_tag" name="search" autofocus>
-				    <button>SUBMIT</button>
-
-                <span class="intro-lead-in" id="question-after">
-				    AND DOGS.
-				</span>
-
-
-				</div>
-				<br>
-
-				<div style="display:none" class="alert alert-success" id="correct" role="alert">
-			        Well done! You got the answer!
-			    </div>
-				<div style="display:none" class="alert alert-danger" id="wrong" role="alert">
-			        Oops, you're wrong. Try again.
-			     </div>
-				<h4>Your score is:</h4> <h4 id="score">0</h4>
-                <span id="timer"></span>
-		</div>
+            <div class="span4">
+            	<span class="intro-lead-in" id="question-before"></span>
+            	<script>display_image()</script>
+            	<div id="gif-place"></div>
+            	<br><br><br>
+            	<input type="text" id="search_tag" name="search" autofocus>
+				<button>SUBMIT</button>
+                <span class="intro-lead-in" id="question-after">AND DOGS.</span>
+			</div>
+			<br>
+            <div style="display:none" class="alert alert-success" id="correct" role="alert">
+			     Well done! You got the answer!
+			</div>
+			<div style="display:none" class="alert alert-danger" id="wrong" role="alert">
+                Oops, you're wrong. Try again.
+			</div>
+			<h4>Your score is:</h4> <h4 id="score">0</h4>
+            <span id="timer"></span>
+        </div>
 	</header>
 </body>
 </html>

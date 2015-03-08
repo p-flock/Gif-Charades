@@ -1,10 +1,9 @@
-// Countdown time in seconds
-var count = 60;
-
-var counter = setInterval(timer, 1000);
+var seconds = 60;                           // Countdown time
+var countdown = setInterval(timer, 1000);   // Set timer function to run every second
 
 function timer() {
     count = count - 1;
+    
     if (counter <= 0) {
         // do something
         return;
@@ -12,5 +11,3 @@ function timer() {
 
     document.getElementById("timer").innerHTML = count;
 }
-
-
