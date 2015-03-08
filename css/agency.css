@@ -718,12 +718,6 @@ footer {
     text-align: center;
 }
 
-footer span.copyright {
-    text-transform: uppercase;
-    text-transform: none;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    line-height: 40px;
-}
 
 footer ul.quicklinks {
     margin-bottom: 0;
@@ -859,6 +853,17 @@ img::-moz-selection {
     background: 0 0;
 }
 
+div::after {
+  content: "";
+  background: url(../img/giphy.gif);
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+}
 body {
     webkit-tap-highlight-color: #fed136;
 }
