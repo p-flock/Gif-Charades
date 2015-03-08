@@ -83,7 +83,7 @@ function getRandom() {
 
 function display_image(search_term){
     counter = 0;
-    console.log("search_term = " + search_term);
+    //console.log("search_term = " + search_term);
     if(counter == 0)
         ;
     else
@@ -92,8 +92,8 @@ function display_image(search_term){
         xhr.done(
             function(response) {
             temp = response;
-            console.log(temp);
-            console.log("success got data", response);
+            //console.log(temp);
+            //console.log("success got data", response);
             //var select_gif = response.data[random].images.original;
             show_image(response);
         });
@@ -223,8 +223,8 @@ function display_puzzle () {
     // sentence will be an array containing a string and an array of integers
     var sentence = getRandomSentence(sentences);
     var words = sentence[0].split(" ");
-    console.log("sentence is" + words);
-    console.log(words[0]);
+    //console.log("sentence is" + words);
+    //console.log(words[0]);
 
     
     /*
@@ -236,7 +236,7 @@ function display_puzzle () {
     // redefines global variable 'answer'
     answer = words[sentence[1][0]];
     var answer_index = sentence[1][0];
-    console.log("answer = " + answer);
+    //console.log("answer = " + answer);
 
 
 
