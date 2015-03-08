@@ -4,7 +4,7 @@ var img;
 var answer = "CATS";
 var text_before = "IT'S RAINING";
 var text_after = "AND DOGS";
-var counter = 0;
+var val;
 
 // This function is called when the user submits an answer
 // 
@@ -267,6 +267,17 @@ function display_puzzle () {
      *        
      *}
      */
+}
+
+function saveScore(val) {
+    document.cookie = 'snum:'+val; //Set the cookie
+}
+
+function getScore() {
+    var start = document.cookie.indexOf('snum:'); //Get the location of the cookie value
+    var stop = document.cookie.indexOf(';'); //Get the end of the cookie value
+
+    return document.cookie.substring(start+5, stop); //Return the value of the cookie (+5 because 'snum:' is 5 chars long)
 }
 
 

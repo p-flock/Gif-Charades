@@ -1,11 +1,13 @@
-var seconds = 3;                           // Countdown time
+var seconds = 60;                           // Countdown time
 var countdown = setInterval(timer, 1000);   // Set timer function to run every second
 
 function timer() {
     seconds = seconds - 1;
     
-    if (seconds < 0) {
-    	document.getElementById("game").value = "this is a test";
+    if (seconds <= 0) {
+        saveScore(val);
+        console.log(getScore());
+        window.location.replace("./score.html");
     }
 
     document.getElementById("timer").innerHTML = seconds;
