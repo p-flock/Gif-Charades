@@ -264,7 +264,6 @@ fieldset[disabled] .btn-xl.active {
 }
 
 header {
-    margin: auto;
     text-align: center;
     color: #fff;
     background-attachment: scroll;
@@ -717,8 +716,11 @@ section#contact .text-danger {
 }
 
 footer {
-    padding: 25px 0;
     text-align: center;
+    position: absolute;
+    height: 80px;
+    bottom: 0;
+    left: 45.3%;
 }
 
 ul.social-buttons {
@@ -863,4 +865,10 @@ div::after {
 
 body {
     webkit-tap-highlight-color: #fed136;
+}
+
+.message {
+    text-align: center;
+    margin: auto;
+    color: white;
 }
