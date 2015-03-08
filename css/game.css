@@ -853,10 +853,13 @@ body {
 
 }
 
+input, .btn {
+    margin: auto;
+}
+
 #left {
     float: left;
     margin: auto;
-    
 }
 
 #right {

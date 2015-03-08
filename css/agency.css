@@ -264,6 +264,7 @@ fieldset[disabled] .btn-xl.active {
 }
 
 header {
+    margin: auto;
     text-align: center;
     color: #fff;
     background-attachment: scroll;
@@ -859,6 +860,7 @@ div::after {
   position: absolute;
   z-index: -1;   
 }
+
 body {
     webkit-tap-highlight-color: #fed136;
 }
