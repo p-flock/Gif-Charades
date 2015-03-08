@@ -182,6 +182,7 @@ function display_puzzle () {
     console.log("answer = " + answer);
 
 
+    $('#question-before').html(function() { return text_before});
 
     //var toDisplay = [];
     text_before = "";
@@ -195,7 +196,7 @@ function display_puzzle () {
     for(i = answer_index + 1; i < words.length; i++) {
         text_after = text_after + words[i] + " ";
     }
-    $('#question').html(function() { return text_after});
+    $('#question-after').html(function() { return text_after});
 
     /*
      *for(i = 0; i < words.length; i++) {
