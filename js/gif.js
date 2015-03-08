@@ -207,6 +207,8 @@ function display_puzzle () {
     }
     $('#question-after').html(function() { return text_after});
 
+
+
     /*
      *for(i = 0; i < words.length; i++) {
      *    if (words[i] == answer) {
